@@ -1,0 +1,186 @@
+﻿/* 
+    REGLES PAR DEFAUT
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1 !important;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-image: url(../assets/bg.png);
+    background-size: cover !important;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    text-decoration: none;
+}
+
+/* 
+    REGLES jQUERY
+*/
+
+/* Suppression du fond blanc et de l'effet d'ombre sur le texte par défaut */
+.ui-overlay-a,
+.ui-page-theme-a,
+.ui-page-theme-a .ui-panel-wrapper {
+    background-color: transparent;
+    text-shadow: none;
+}
+
+.return-home {
+    position: absolute;
+    top: 0.5%;
+    left: 1%;
+    height: 10.5%;
+    width: 22%;
+    z-index: 500;
+}
+
+.page {
+    padding-top: 10%;
+}
+
+/* Barre d'état des composants */
+.info-bar {
+    position: absolute;
+    width: 100%;
+}
+
+/* Etat d'un composant */
+.info-bar span {
+    margin: 0% 1%;
+    color: #A9E7F7;
+    float: right;
+}
+
+.status-bar {
+    bottom: 2%;
+}
+
+.desc-bar {
+    top: 2%;
+}
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 300%;
+    font-weight: bold;
+}
+
+main {
+    margin-top: 3%;
+}
+
+.menu-row {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    width: 90%;
+    margin: 1% auto;
+}
+
+/* Aspect général d'un bouton */
+.home-menu {
+    font-weight: bold !important;
+    color: #000000 !important;
+    border-radius: 20px;
+    padding: 5%;
+    font-size: 150%;
+    border: 5px solid black;
+    flex: 1;
+    text-align: center;
+}
+
+form {
+    width: 60%;
+    margin: 0% auto;
+}
+
+.button {
+    width: 50%;
+    margin: 2% auto;
+    padding: 2%;
+    text-align: center;
+    background-color: gray;
+    border-radius: 20px;
+}
+
+.button a,
+.button a:hover,
+.button a:active,
+.button a:focus {
+    color: white;
+}
+
+div.center {
+    text-align: center;
+    margin: 2% auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-bg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: gray;
+    z-index: 1000;
+}
+
+.popup-content {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1001;
+}

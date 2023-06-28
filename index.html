@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Test simple</title>
+    <!-- Standard d'encodage UTF-8 -->
+    <meta charset="utf-8">
+
+    <!-- Import de styles personnalisés CSS -->
+    <link rel="stylesheet" href="lib/jquery/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Import librairie jQuery/jQuery Mobile (pour faciliter la gestion du DOM) -->
+    <script src="lib/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="lib/jquery/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+
+    <!-- Import API IPM -->
+    <script type="application/javascript" src="http://localhost:5000/api/System/JsScript"></script>
+
+    <script src="js/index.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <!-- Page d'accueil -->
+    <div data-role="page" id="page-home" class="page">
+
+        <header>
+            <h1>Page d'accueil</h1>
+            <h2><i>Sur machine virtuelle, activer le scénario correspondant au use case sélectionné</i></h2>
+        </header>
+
+        <main>
+            <div class="menu-row">
+                <a class="home-menu" id="form">
+                    <label>Formulaire</label>
+                </a>
+                <a class="home-menu" id="error">
+                    <label>Page d'erreur</label>
+                </a>
+            </div>
+            <div class="menu-row">
+                <a class="home-menu" id="barcode">
+                    <label>Lecture code barre & impression reçu</label>
+                </a>
+                <a class="home-menu" id="pay">
+                    <label>Paiement CB & impression ticket</label>
+                </a>
+                <a class="home-menu" id="cash">
+                    <label>Paiement Cash & impression reçu</label>
+                </a>
+                <!-- <a class="home-menu" id="vitale">
+                    <label>Lecture carte vitale & impression document</label>
+                </a> -->
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Page de formulaire -->
+    <div data-role="page" id="page-form" class="page">
+
+        <header>
+            <h1>Formulaire</h1>
+        </header>
+
+        <main>
+            <form>
+                <div class="form-item">
+                    <label>Prénom</label>
+                    <input type="text" name="firstname">
+                </div>
+                <div class="form-item">
+                    <label>Nom</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="form-item">
+                    <label>Date de naissance</label>
+                    <input type="date" name="date">
+                </div>
+                <div class="form-item">
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </div>
+                <div class="form-item">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="button form-submit">
+                    <a>Confirmer</a>
+                </div>
+            </form>
+        </main>
+
+    </div>
+
+    <div data-role="page" id="page-pay-form" class="page">
+
+        <header>
+            <h1>Formulaire paiement</h1>
+        </header>
+
+        <main>
+            <form>
+                <div class="form-item">
+                    <label>Référence monétique</label>
+                    <input type="text" name="refTransaction">
+                </div>
+                <div class="form-item">
+                    <label>Référence panier</label>
+                    <input type="text" name="refShoppingCart">
+                </div>
+                <div class="form-item">
+                    <label>Montant (en centimes)</label>
+                    <input type="number" name="amountInCents">
+                </div>
+                <div class="button form-submit">
+                    <a>Confirmer</a>
+                </div>
+            </form>
+        </main>
+
+    </div>
+
+    <!-- Page de paiement CB -->
+    <div data-role="page" id="page-pay" class="page">
+
+        <header>
+            <h1>Paiement par carte bancaire</h1>
+        </header>
+
+        <main>
+            <div class="center" id="pay-instruction">
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Page de paiement Cash -->
+    <div data-role="page" id="page-cash" class="page">
+
+        <header>
+            <h1>Paiement en espèces</h1>
+        </header>
+
+        <main>
+            <div class="center" id="cash-instruction">
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Page de lecture de code barre -->
+    <div data-role="page" id="page-barcode" class="page">
+
+        <header>
+            <h1>Lecture barcode</h1>
+        </header>
+
+        <main>
+            <div class="center" id="barcode-mode">
+            </div>
+            <div class="center" id="barcode-instruction">
+            </div>
+            <div class="center receipt-print">
+            </div>
+            <div class="button" id="barcode-start">
+                <a>Lancer la lecture</a>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Page de paiement Cash -->
+    <div data-role="page" id="page-vitale" class="page">
+
+        <header>
+            <h1>Lecture de carte vitale</h1>
+        </header>
+
+        <main>
+            <div class="center" id="vitale-instruction">
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Page de remerciements et fin -->
+    <div data-role="page" id="page-thanks" class="page">
+
+        <header>
+            <h1>Merci d'avoir utilisé notre application</h1>
+        </header>
+
+        <main>
+            <div class="center receipt-print">
+            </div>
+        </main>
+
+    </div>
+
+
+    <div id="sessionTimeout" class="hidden">
+        <div class="popup-bg">
+        </div>
+        <div class="popup-content">
+            <h1>Votre session sera bientôt terminée</h1>
+        </div>
+    </div>
+
+    <!-- Barre de statut des composants -->
+    <div class="info-bar desc-bar">
+    </div>
+
+    <div class="info-bar status-bar">
+    </div>
+
+    <div class="return-home">
+
+    </div>
+</body>
+
+</html>
