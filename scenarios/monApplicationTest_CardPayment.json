@@ -1,0 +1,209 @@
+{
+    "OnSave": true,
+    "Kind": "TECH",
+    "Description": "Use case de paiement et d'impression de billet",
+    "Application": "maintv4",
+    "Phase": "EXPL",
+    "KioskSerialNumber": "SKV2-SIMU-USER",
+    "SessionLink": "5b1e7e0c-51ca-45ed-b4cd-abf8c5db554a",
+    "SessionId": "a2757d26-bb5b-48f9-925e-aae83d46e9db",
+    "SessionType": "UserSession",
+    "NextSessionType": "UserSession",
+    "Start": "2022-04-05T16:25:13.0137827+02:00",
+    "End": "2022-04-05T16:27:35.8117294+02:00",
+    "StartCause": "Auto",
+    "EndCause": "Application",
+    "Story": [
+        {
+            "ClassName": "ServiceTPAIngenico",
+            "MethodName": "debitCard",
+            "ResultValue": true,
+            "Args": [
+                {
+                    "refTransaction": "ref-deb-0000",
+                    "refShoppingCart": "ticket-1234",
+                    "amountInCents": 1000
+                }
+            ],
+            "ComponentName": "CardPayment",
+            "Date": "2022-04-05T16:25:13.290Z",
+            "TimeSpan": 63784772713290000,
+            "EventType": "ApiServiceEvent",
+            "Types": [
+                "ApiServiceEvent",
+                "ApiEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:15.290Z",
+            "TimeSpan": 637847727152900000,
+            "Name": "CardPayment",
+            "EventType": "JsEventEvent",
+            "EventName": "cardDebit",
+            "Data": "{\"refTransaction\":\"ref-deb-0000\",\"cardType\":\"MastercardVisaContactless\",\"cardPan\":\"507100\",\"iso2\":\"507100??????????=2304901????????????\",\"dataType\":\"CardAcquired\"}",
+            "Types": [
+                "JsEventEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:16.290Z",
+            "TimeSpan": 637847727162900000,
+            "Name": "CardPayment",
+            "EventType": "JsEventEvent",
+            "EventName": "cardDebit",
+            "Data": "{\"initialAmount\":0,\"bankAccountId\":null,\"refTransaction\":\"ref-deb-0000\",\"totalInserted\":0,\"dataType\":\"TransactionAuthorized\"}",
+            "Types": [
+                "JsEventEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:17.290Z",
+            "TimeSpan": 637847727172900000,
+            "ComponentName": "TicketPrinting",
+            "EventType": "ApiServiceEvent",
+            "MethodName": "printRawHtml",
+            "Args": [
+                {
+                    "html": "",
+                    "printerName": ""
+                }
+            ],
+            "ResultValue": null,
+            "Types": [
+                "ApiServiceEvent",
+                "ApiEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:18.290Z",
+            "TimeSpan": 637847727182900000,
+            "Name": "TicketPrinting",
+            "EventType": "JsEventEvent",
+            "EventName": "rawHtmlPrint",
+            "Data": "{\"printedPages\":\"1\",\"totalPages\":\"1\",\"dataType\":\"RawHtmlPrinted\"}",
+            "Types": [
+                "JsEventEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:19.290Z",
+            "TimeSpan": 637847727192900000,
+            "ComponentName": "CardPayment",
+            "EventType": "ApiServiceEvent",
+            "MethodName": "confirmTransaction",
+            "Args": [
+                {
+                    "confirmAmountInCents": 0
+                }
+            ],
+            "ResultValue": true,
+            "Types": [
+                "ApiServiceEvent",
+                "ApiEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:20.290Z",
+            "TimeSpan": 637847727202900000,
+            "Name": "CardPayment",
+            "EventType": "JsEventEvent",
+            "EventName": "transactionConfirm",
+            "Data": "{\"dataType\":\"TransactionConfirmed\"}",
+            "Types": [
+                "JsEventEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:21.290Z",
+            "TimeSpan": 637847727212900000,
+            "Name": "CardPayment",
+            "EventType": "JsEventEvent",
+            "EventName": "cardDebit",
+            "Data": "{\"debitId\":\"\",\"receipt\":\" CARTE BANCAIRE\\r\\n   SANS CONTACT\\r\\nEntete du ticket de trans\\r\\naction EMV B12 V3        \\r\\nA0000000421010\\r\\nCB\\r\\nle 05/04/22 a 14:29:46\\r\\nINGENICO   TEST    E\\r\\nVEREST Bulletin 12 V\\r\\n3\\r\\n1000060\\r\\n12345678901234\\r\\n12345\\r\\n************8881\\r\\n8532717E609AEDB5\\r\\n139   715   002245    \\r\\nC      \\r\\nMONTANT REEL=\\r\\n     10,00 EUR\\r\\nPour information:\\r\\n13,00 USD\\r\\nDEBIT\\r\\n      TICKET CLIENT\\r\\n       A CONSERVER\\r\\nPied du ticket de transac\\r\\ntion EMV B12 V3          \\r\\n \",\"server\":\"ServerPrincipal\",\"refTransaction\":\"ref-deb-0000\",\"dataType\":\"CardDebited\"}",
+            "Types": [
+                "JsEventEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:23.290Z",
+            "TimeSpan": 637847727232900000,
+            "ComponentName": "CardPayment",
+            "EventType": "ApiServiceEvent",
+            "MethodName": "printReceipt",
+            "Args": [
+                {
+                    "htmlHeader": "<h1 style='font-size: 20px; font-weight:bold; font-family: Verdana, sans-serif; text-align: center;'>Votre reçu</h1><h2  style='font-size: 15px; font-weight:bold; font-family: Verdana, sans-serif; text-align: center;'>Panier ticket-1234</h2><div><pre style='font-size: 14px; font-family: Verdana, sans-serif;'>",
+                    "htmlFooter": "</pre></div><hr><p style='font-family: Verdana, sans-serif; text-align: center;'>Au revoir</p>"
+                }
+            ],
+            "ResultValue": null,
+            "Types": [
+                "ApiServiceEvent",
+                "ApiEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:23.490Z",
+            "TimeSpan": 637847727234900000,
+            "ComponentName": "ReceiptPrinting",
+            "EventType": "ApiServiceEvent",
+            "MethodName": "printRawHtml",
+            "Args": [
+                {
+                    "html": "",
+                    "printerName": ""
+                }
+            ],
+            "ResultValue": null,
+            "Types": [
+                "ApiServiceEvent",
+                "ApiEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        },
+        {
+            "Description": "",
+            "Date": "2022-04-05T16:25:24.290Z",
+            "TimeSpan": 637847727242900000,
+            "Name": "CardPayment",
+            "EventType": "JsEventEvent",
+            "EventName": "receiptPrint",
+            "Data": "{\"printedPages\":1,\"totalPages\":1,\"dataType\":\"ReceiptPrinted\"}",
+            "Types": [
+                "JsEventEvent",
+                "TechnicalSessionEvent",
+                "AbstractSessionEvent"
+            ]
+        }
+    ],
+    "ApplicationVersion": "",
+    "Filename": "637847727129870860"
+}

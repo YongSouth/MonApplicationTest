@@ -1,0 +1,20 @@
+{
+	"text": [
+		["a", "z", "e", "r", "t", "y", "u", "i", "o", "p", "@", "key_backspace", "", "7", "8", "9"],
+		["q", "s", "d", "f", "g", "h", "j", "k", "l", "m", "/", "key_enter", "", "4", "5", "6"],
+		["key_shift", "w", "x", "c", "v", "b", "n", ",", "-", ":", ".", "empty_", "", "1", "2", "3"],
+		["", "key_space", "", "empty_", "", "", "0", ""]
+	],
+	"email": [
+		["a", "z", "e", "r", "t", "y", "u", "i", "o", "p", "@", "key_backspace"],
+		["q", "s", "d", "f", "g", "h", "j", "k", "l", "m", ":", ".", "key_enter"],
+		["key_shift", "w", "x", "c", "v", "b", "n", "-", "_", "key_shift"],
+		["switch_emailnumber", "key_space", ".fr", ".com"]
+	],
+	"switch_emailnumber": [
+		["1", "2", "3"],
+		["4", "5", "6"],
+		["7", "8", "9"],
+		["switch_email", "0", "key_backspace"]
+	]
+}

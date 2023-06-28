@@ -1,0 +1,7 @@
+{
+    "name": "monApplicationTest",
+    "kind": "application",
+    "version": "0.0.5",
+    "description": "Application test simple",
+    "action": "create"
+}

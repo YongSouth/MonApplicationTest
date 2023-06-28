@@ -1,0 +1,50 @@
+.oskbd-key, .oskbd-key-space {
+	color : red;
+	background-color: white;
+}
+
+.oskbd-container {
+	background-color: gray;
+	width : 90%
+}
+
+.oskbd-keyboard {
+	width: 90%;
+}
+
+.oskbd-line {
+	margin: 10px 5px;
+	height: 60px;
+}
+
+.oskbd-close {
+	_display: none;
+}
+
+.oskbd-key-enter, .oskbd-key-backspace {
+	width: 10%;
+}
+
+.oskbd-key-space {
+	width: 54%;
+}
+
+.oskbd-key-empty {
+	width: 10%;
+}
+
+.oskbd-key-switch.layout-switch-emailnumber {
+	width: auto;
+}
+
+.oskbd-keyboard.layout-switch-emailnumber {
+	width: 50%;
+}
+
+.oskbd-key-shift.layout-email {
+	width: 15%;
+}
+
+.oskbd-key-backspace.layout-switch-emailnumber {
+	width: auto;
+}
